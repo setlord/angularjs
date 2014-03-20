@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html ng-app=mvc>
+<body style='font-family: sans-serif' ng-controller=clicks>
+<h1>Clicked {{ counter.clicks }} times</h1>
+<button ng-click="count()">Click</button>
+
+<script src="./vendor/angular/angular.js"></script>
+<script>
+    var app = angular.module("mvc", []);
+    app.controller("clicks", function ($scope) {
+        $scope.counter = {clicks: 0};
+        $scope.count = function () {
+            $scope.counter.clicks += 1;
+        }
+    });
+</script>
+</body>
